@@ -1,0 +1,25 @@
+[package]
+authors = ["Andre Bogus <bogusandre@gmail.com>"]
+name = "partition"
+version = "0.1.0"
+description = "partition slices in-place by a predicate"
+keywords = "partition, algorithm"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/llogiq/partition"
+documentation = "https://docs.rs/partition"
+categories = ["algorithms"]
+
+[badges]
+travis-ci = { repository = "llogiq/partition" }
+
+[lib]
+bench = false
+
+[dev-dependencies]
+quickcheck = "0.4.1"
+bencher = "0.1"
+
+[[bench]]
+name = "bench"
+harness = false
