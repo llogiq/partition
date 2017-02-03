@@ -1,6 +1,6 @@
 //! This crate has only one `partition(&[T], P)` function to partition slices
 //! in place.
-#[no_std]
+#![cfg_attr(not(test), no_std)]
 
 #[cfg(test)]
 extern crate quickcheck;
@@ -22,7 +22,7 @@ extern crate quickcheck;
 /// assert!(&[0, 2, 4, 6].iter().all(|x| even.iter().any(|e| e == x)), "expected [0, 2, 4, 6], got {:?}", even);
 /// assert!(&[1, 3, 5].iter().all(|x| odd.iter().any(|o| o == x)));
 /// ```
-pub fn partition<'a, T, P>(data: &mut [T], predicate: P) -> (&mut [T], &mut [T])
+pub fn partition<'a, T, P>(data: &'a mut [T], predicate: P) -> (&'a mut [T], &'a mut [T])
 where P: Fn(&T) -> bool {
     let len = data.len();
     if len == 0 { return (&mut [], &mut []); }
@@ -59,10 +59,10 @@ mod tests {
     #[test]
     fn quickcheck() {
         fn prop(data: Vec<u32>) -> bool {
-            let mut xs = data.clone();
-            let mut trues = xs.iter().cloned().filter(|e| e % 2 == 0).collect::<Vec<u32>>();
-            let mut falses = xs.iter().cloned().filter(|e| e % 2 != 0).collect::<Vec<u32>>();
-            let (left, right) = partition(&mut xs, |&e| e % 2 == 0);
+            let mut data = data;
+            let mut trues = data.iter().cloned().filter(|e| e % 2 == 0).collect::<Vec<u32>>();
+            let mut falses = data.iter().cloned().filter(|e| e % 2 != 0).collect::<Vec<u32>>();
+            let (left, right) = partition(&mut data, |&e| e % 2 == 0);
             trues.sort();
             falses.sort();
             left.sort();
