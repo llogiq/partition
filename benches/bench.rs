@@ -32,19 +32,19 @@ mkbench!(1, bench_slice_1_true, bench_vec_1_true, true_fn);
 mkbench!(10, bench_slice_10_true, bench_vec_10_true, true_fn);
 mkbench!(100, bench_slice_100_true, bench_vec_100_true, true_fn);
 mkbench!(1000, bench_slice_1000_true, bench_vec_1000_true, true_fn);
-mkbench!(10000, bench_slice_10000_true, bench_vec_10000_true, true_fn);
+mkbench!(10_000, bench_slice_10000_true, bench_vec_10000_true, true_fn);
 
 mkbench!(1, bench_slice_1_false, bench_vec_1_false, false_fn);
 mkbench!(10, bench_slice_10_false, bench_vec_10_false, false_fn);
 mkbench!(100, bench_slice_100_false, bench_vec_100_false, false_fn);
 mkbench!(1000, bench_slice_1000_false, bench_vec_1000_false, false_fn);
-mkbench!(10000, bench_slice_10000_false, bench_vec_10000_false, false_fn);
+mkbench!(10_000, bench_slice_10000_false, bench_vec_10000_false, false_fn);
 
 mkbench!(1, bench_slice_1_odd, bench_vec_1_odd, odd_fn);
 mkbench!(10, bench_slice_10_odd, bench_vec_10_odd, odd_fn);
 mkbench!(100, bench_slice_100_odd, bench_vec_100_odd, odd_fn);
 mkbench!(1000, bench_slice_1000_odd, bench_vec_1000_odd, odd_fn);
-mkbench!(10000, bench_slice_10000_odd, bench_vec_10000_odd, odd_fn);
+mkbench!(10_000, bench_slice_10000_odd, bench_vec_10000_odd, odd_fn);
 
 
 benchmark_group!(bench,

@@ -22,7 +22,7 @@ extern crate quickcheck;
 /// assert!(&[0, 2, 4, 6].iter().all(|x| even.iter().any(|e| e == x)), "expected [0, 2, 4, 6], got {:?}", even);
 /// assert!(&[1, 3, 5].iter().all(|x| odd.iter().any(|o| o == x)));
 /// ```
-pub fn partition<'a, T, P>(data: &'a mut [T], predicate: P) -> (&'a mut [T], &'a mut [T])
+pub fn partition<T, P>(data: &mut [T], predicate: P) -> (&mut [T], &mut [T])
 where P: Fn(&T) -> bool {
     let len = data.len();
     if len == 0 { return (&mut [], &mut []); }

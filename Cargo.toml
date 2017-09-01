@@ -1,7 +1,7 @@
 [package]
 authors = ["Andre Bogus <bogusandre@gmail.com>"]
 name = "partition"
-version = "0.1.0"
+version = "0.1.1"
 description = "partition slices in-place by a predicate"
 keywords = ["partition", "algorithm"]
 readme = "README.md"
@@ -19,7 +19,7 @@ bench = false
 [dev-dependencies]
 quickcheck = "0.4.1"
 rand = "0.3.14"
-bencher = "0.1"
+bencher = "0.1.4"
 
 [[bench]]
 name = "bench"
