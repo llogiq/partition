@@ -32,6 +32,11 @@ let mut even_odd = [0u8, 1, 2, 3, 4, 5, 6];
 let (even, odd) = partition(&mut even_odd, |x| x & 1 == 0);
 ```
 
+```Rust
+let mut less_than_4 = [0u8, 3, 6, 2, 1, 5, 4];
+let idx = partition_index(&mut less_than_4, |x| x < 4);
+```
+
 ## Performance
 
 On a Core m3-6y30 with 4GB of RAM, I get the following benchmark results
