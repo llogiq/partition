@@ -15,6 +15,11 @@ This crate has a `partition(..)` function to partition a mutable slice of
 values by a predicate. It will swap around values to separate those the
 predicate holds for and those it doesn't and return the two mutable sub-slices.
 
+This crate also provides `partition_index(..)` which operates similarly, but
+instead returns the index of the first element to evaluate to false.  All
+elements before this index evaluate to true, and all elements after evaluate
+to false.
+
 ### Warning
 
 Note that since partition works by swapping values, the order of elements within
