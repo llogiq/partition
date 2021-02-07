@@ -24,7 +24,6 @@ extern crate quickcheck;
 /// ```
 pub fn partition<T, P>(data: &mut [T], predicate: P) -> (&mut [T], &mut [T])
 where P: Fn(&T) -> bool {
-    if data.len() == 0 { return (&mut [], &mut []); }
     let idx = partition_index(data, predicate);
     return data.split_at_mut(idx);
 }
