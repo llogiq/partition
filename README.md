@@ -15,6 +15,11 @@ This crate has a `partition(..)` function to partition a mutable slice of
 values by a predicate. It will swap around values to separate those the
 predicate holds for and those it doesn't and return the two mutable sub-slices.
 
+This crate also provides `partition_index(..)` which operates similarly, but
+instead returns the index of the first element to evaluate to false.  All
+elements before this index evaluate to true, and all elements after evaluate
+to false.
+
 ### Warning
 
 Note that since partition works by swapping values, the order of elements within
@@ -25,6 +30,11 @@ the slice will not be preserved.
 ```Rust
 let mut even_odd = [0u8, 1, 2, 3, 4, 5, 6];
 let (even, odd) = partition(&mut even_odd, |x| x & 1 == 0);
+```
+
+```Rust
+let mut less_than_4 = [0u8, 3, 6, 2, 1, 5, 4];
+let idx = partition_index(&mut less_than_4, |x| x < 4);
 ```
 
 ## Performance
