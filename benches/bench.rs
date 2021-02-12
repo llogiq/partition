@@ -7,7 +7,9 @@ use bencher::Bencher;
 use partition::{partition, partition_index};
 
 fn random_values(len: usize) -> Vec<u32> {
-    rand::thread_rng().gen_iter::<u32>().take(len).collect()
+    let mut result = vec![0_u32; len];
+    rand::thread_rng().fill(&mut result[..]);
+    result
 }
 
 fn true_fn(_: &u32) -> bool { true }
