@@ -3,8 +3,8 @@
 partition slices in-place by a predicate
 
 [![Build Status](https://travis-ci.org/llogiq/partition.svg)](https://travis-ci.org/llogiq/partition)
-[![Current Version](http://meritbadge.herokuapp.com/bytecount)](https://crates.io/crates/partition)
-[![License: Apache 2.0/MIT](https://img.shields.io/crates/l/bytecount.svg)](#license)
+[![Current Version](https://img.shields.io/crates/v/partition.svg)](https://crates.io/crates/partition)
+[![License: Apache 2.0/MIT](https://img.shields.io/crates/l/partition.svg)](#license)
 
 Rust has the `Iterator::partition(_)` method, but this requires allocating two
 `Vec`s to hold the values. This has the benefit of preserving order, at the
